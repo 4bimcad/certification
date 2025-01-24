@@ -121,16 +121,29 @@
                   <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone or WhatsApp" required="">
                 </div>
                 <div class="form-group mt-3">
-                  <select class="form-select" aria-label="Select Certificate" style="border-radius: 0%; padding: 12px;" required="">
+                  <select id="certificateSelect" class="form-select" aria-label="Select Certificate" style="border-radius: 0%; padding: 12px;" required>
                       <option selected>Choose a Certificate</option>
-                      <option value="eco_gold" name="eco_gold">Eco Gold Certificate ($499)</option>
-                      <option value="eco_silver" name="eco_silver">Eco Silver Certificate ($249)</option>
-                      <option value="eco_gold_origin" name="eco_gold_origin">Eco Gold Origin Certificate ($1499)</option>
-                      <option value="eco_silver_origin" name="eco_silver_origin">Eco Silver Origin Certificate ($799)</option>
-                      <option value="partnership_gold" name="partnership_gold">Certificate of Partnership Intent (Gold) ($0)</option>
-                      <option value="partnership_silver" name="partnership_silver">Certificate of Partnership Intent (Silver) ($0)</option>
+                      <option value="eco_gold">Eco Gold Certificate ($499)</option>
+                      <option value="eco_silver">Eco Silver Certificate ($249)</option>
+                      <option value="eco_gold_origin">Eco Gold Origin Certificate ($1499)</option>
+                      <option value="eco_silver_origin">Eco Silver Origin Certificate ($799)</option>
+                      <option value="partnership_gold">Certificate of Partnership Intent (Gold) ($0)</option>
+                      <option value="partnership_silver">Certificate of Partnership Intent (Silver) ($0)</option>
                   </select>
-              </div>
+                </div>
+                <script>
+                  // Найти select элемент
+                  const certificateSelect = document.getElementById("certificateSelect");
+              
+                  // Слушатель события для изменения name
+                  certificateSelect.addEventListener("change", function () {
+                      // Установить атрибут name равным value выбранной опции
+                      certificateSelect.setAttribute("name", certificateSelect.value);
+                  });
+              
+                  // Установить начальное значение атрибута name
+                  certificateSelect.setAttribute("name", certificateSelect.value);
+                </script>
                 <div class="text-center"><button type="submit">Order Now</button></div>
               </form>
             </div><!-- End Contact Form -->
